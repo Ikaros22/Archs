@@ -1,0 +1,56 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+<main>
+<header class="header d-flex justify-content-center">
+    <div class="container" action="/signup" method="POST">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-7">
+                <div class="header-content">
+                    <h3 class="header-title"><strong class="text-primary">AR</strong><span>CHS</span></h3>
+                    <h4 class="header-subtitle">Join our community! </h4>
+                    <p>Login to discover all Archs features!</p>
+                    <form  action="/signup" method="GET">
+                    <button class="btn btn-outline-light btn-flat">No account? Get started!</button>
+                    <button class="btn btn-outline-light btn-flat">Donate authors!</button>
+                </form>
+                </div>  
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+                <form class="header-form" action="/login" method="POST">
+                    <div class="head">Try<span class="text-primary"> yourself!</span> </div>
+                    <div class="body">
+                        <div class="form-group">
+                            <input 
+                            class="form-control"
+                            type="email"
+                            name="email" 
+                            id="email" 
+                            value="<%=oldInput.email%>"
+                            placeholder="Email*">
+                        </div>
+                        <div class="form-group">
+                            <input 
+                            class="<%= oldInput.password!=='' ? 'invalid' : 'form-control'%>"
+                            type="password"
+                            name="password"
+                            id="password"
+                            value="<%=oldInput.password%>" 
+                            placeholder="Password*"
+                            >
+                        </div>
+                    </div> 
+                    <div class="footer" action="/signup" method="POST">
+                        <button class="btn btn-primary btn-block" type="submit">Login</button>
+                    </div>
+                </form> 
+            </div>
+        </div>  
+    </div>
+</header>
+</main>
+<%- include('../includes/tail.ejs') %>

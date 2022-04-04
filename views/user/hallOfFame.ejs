@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="col-lg-8">
+                        <div class="tabs-container">
+                            <ul class="nav tab-nav">
+                                <li class="item">
+                                    <a class="link <%-(place==1)?'active':''%>" href="/hall-of-fame?place=1">1</a>
+                                </li>
+                                <li class="item">
+                                    <a class="link <%-(place==2) ? 'active':''%>" href="/hall-of-fame?place=2">2</a>
+                                </li>
+                                <li class="item">
+                                    <a class="link <%-(place==3)?'active':''%>" href="/hall-of-fame?place=3">3</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active">
+                                    <h4 class="title">#<%= place %> <%= champ.nickname %></h4>
+                                    <div><label>     </label></div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <h6 class="title mb-3"><%= champ.rank %></h6>
+                                            <p>Rank</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h6 class="title mb-3"><%= champ.highscore.wpm %> wpm</h6>
+                                            <p>Highscore</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <h6 class="title mb-3"><%= champ.highscore.words %></h6>
+                                            <p>Total words</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block align-self-center">
+                        <img src="assets/imgs/eiffel-tower.svg" alt="" class="w-100 tower">
+                    </div>
+                </div>                  
+            </div>                      
+        </section>
+    </main>
+<%- include('../includes/tail.ejs') %>

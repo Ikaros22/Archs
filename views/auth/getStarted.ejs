@@ -1,0 +1,76 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+<main>
+<header class="header d-flex justify-content-center">
+    <div class="container" action="/signup" method="POST">
+        <div class="row h-100 align-items-center">
+            <div class="col-md-7">
+                <div class="header-content">
+                    <h3 class="header-title"><strong class="text-primary">AR</strong><span>CHS</span></h3>
+                    <h4 class="header-subtitle">How fast can you write? </h4>
+                    <p>Sign up to save your score, see progress and fight with your friends!</p>
+                    <button class="btn btn-outline-light btn-flat">Donate authors!</button>
+                </div>  
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+                <form class="header-form" action="/signup" method="POST">
+                    <div class="head">Try<span class="text-primary"> yourself!</span> </div>
+                    <div class="body">
+                        <div class="form-group">
+                            <input 
+                            class="form-control"
+                            type="email"
+                            name="email" 
+                            id="email" 
+                            value="<%=oldInput.email%>"
+                            placeholder="Email*">
+                        </div>
+                        <div class="form-group">
+                            <input
+                            class='form-control'
+                            type="text"
+                            name="nickname"
+                            id="nickname"
+                            value="<%=oldInput.nickname%>"
+                            placeholder="Nickname*",
+                            autocomplete="off"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <input 
+                            class="<%= oldInput.password!=='' ? 'invalid' : 'form-control'%>"
+                            type="password"
+                            name="password"
+                            id="password"
+                            value="<%=oldInput.password%>" 
+                            placeholder="Password*"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <input
+                            class="<%= oldInput.password!=='' ? 'invalid' : 'form-control'%>"
+                            type="password"
+                            name="confirmPassword"
+                            id="confirmPassword"
+                            value="<%=oldInput.confirmPassword%>"
+                            placeholder="Confirm password*">
+                        </div>
+                    </div> 
+                    <% if (errorMessage) { %>
+                        <div class="head"><%= errorMessage%></div>
+                    <% } %>
+                    <div class="footer" action="/signup" method="POST">
+                        <button class="btn btn-primary btn-block" type="submit">Get Started</button>
+                    </div>
+                </form> 
+            </div>
+        </div>  
+    </div>
+</header>
+</main>
+<%- include('../includes/tail.ejs') %>

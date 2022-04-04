@@ -1,0 +1,33 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+    <main>
+        <section class="section" id="about">
+            <div class="container text-center">
+                <h6 class="display-4 has-line"><%= username %></h6>
+                <p class="mb-5 pb-4">Keep training to improve your skills!</p>
+    
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="circle-100 mb-3"><i class="ti-light-bulb"></i></div>
+                        <h6 class="title mb-3"><%= rank %></h6>
+                        <p>Rank</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="circle-100 mb-3"><i class="ti-paint-bucket"></i></div>
+                        <h6 class="title mb-3"><%= highscore %></h6>
+                        <p>Highscore</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="circle-100 mb-3"><i class="ti-marker-alt"></i></div>
+                        <h6 class="title mb-3"><%= words %></h6>
+                        <p>Total words</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<%- include('../includes/tail.ejs') %>

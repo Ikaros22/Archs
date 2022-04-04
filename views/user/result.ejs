@@ -1,0 +1,57 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+   <section class="section" id="pricing">
+    <div class="container text-center">
+        <h6 class="display-4 has-line">AWESOME!</h6>
+        <p class="mb-5 pb-4">Keep training, you are doing better!</p>
+        <div class="row pt-5">
+            <div class="col-lg-4">
+                <a class="pricing-card">
+                    <div class="head">Rank</div>
+                    <div class="body">
+                        <h1>Private</h1>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Just <%=(100-WPM)%> more wpm to next rank!</li>
+                        <li class="list-group-item">You can do it!</li>
+                    </ul>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <a href="javascript:void(0)" class="pricing-card popular">
+                    <div class="head">Score</div>
+                    <div class="body">
+                        <h1><%= words %> words!</h1>
+                    </div>
+                    <div class="popular-item">Stats:</div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Mistakes: <%= mistakes %></li>
+                        <li class="list-group-item">WPM: <%= WPM %></li>
+                        <li class="list-group-item">CPM: <%= CPM %></li>
+                    </ul>
+                </a>
+            </div>
+            <div class="col-lg-4">
+                <a href="javascript:void(0)" class="pricing-card">
+                    <div class="head">Highscore</div>
+                    <div class="body">
+                        <h1><%= highWPM %> WPM </h1>
+                    </div>
+                    <ul class="list-group">
+                        <% if(record){ %>
+                            <li class="list-group-item">New record!!!</li>
+                        <% } %>
+                        <li class="list-group-item">Mistakes: <%= highMSTK %></li>
+                        <li class="list-group-item"><%= highCPM %> CPM</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<%- include('../includes/tail.ejs') %>

@@ -1,0 +1,66 @@
+<%- include('./includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/rubic.css">
+</head>
+
+<body class="body">
+   <%- include('./includes/navigation.ejs') %>
+        <header class="header d-flex justify-content-left">
+            <h3 class="header-title2"><strong class="text-primary">Start </strong><span>typing</span></h3>
+                            <h4 class="header-subtitle2">Go! </h4>
+                            <div class="container-center">
+                                <div class="wrapper">
+                                    <div class="content-box">
+                                        <div class="typing-text">
+                                            <% for (let word of text) { %>
+                                            <span><%= word %> </span>
+                                            <% } %>
+                                        </div>
+                                    <form action="/result" method="POST">
+                                        <!-- <input  type="text" class="input-text" name="userText" id='userText' onclick="init()" autocomplete="off"> -->
+                                        <textarea placeholder="Here!" class="input-text" name="userText" id="userText" cols="30" rows="6" onclick="init()"></textarea>
+                                        <script>
+                                            function init() {
+                                            let done = true;
+                                            if(done){
+                                            done=false;
+                                            var x = setInterval(function()  {
+                                                document.getElementById("disp").innerHTML = distance;
+                                                    if (distance < 1) {
+                                                        document.getElementById("again").classList.remove("invisible");
+                                                        document.getElementById("save").classList.remove("invisible");
+                                                        document.getElementById("userText").classList.add("invisible");
+                                                    } else{
+                                                    distance--;
+                                                    }
+                                                    }, 1000);
+                                            }
+                                            }
+                                        </script>
+                                            <div class="content"> 
+                                            <ul class="result-details">
+                                                <li class="time">
+                                                    <p>Time Left:</p>
+                                                    <span><b id="disp"></b>s</span>
+                                                    <script>
+                                                    let distance = 45;
+                                                        document.getElementById("disp").innerHTML = distance;
+                                                    </script>
+                                                </li>
+                                                    <li>
+                                                        <button class="btn btn-primary btn-block invisible" id="save">Save result!</button>
+                                    </form>
+                                                    </li>
+                                                <li>
+                                                    <form action="/" method="GET">
+                                                        <button class="btn btn-primary btn-block invisible" id="again">Try again!</button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                            </div>
+                                    </div>
+                                    <script>
+                                        const typingText = text;
+                                    </script>            
+        </header>
+</body>
+<%- include('./includes/tail.ejs') %>
