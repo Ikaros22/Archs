@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const MongoDBStore = require('connect-mongodb-session')(session);
 
 const MONGODB_URI =
-  'mongodb+srv://Ikaros22:mustWork@shop-data.p7zty.mongodb.net/users';
+  'mongodb+srv://DUMMY/dummy/DUMMY';
 
 const store = new MongoDBStore({
   uri: MONGODB_URI,
