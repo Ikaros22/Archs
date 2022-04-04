@@ -31,7 +31,7 @@ app.set('view engine', 'ejs');
 
 app.use(
   session({
-    secret: 'K@czk1L@t@j0Klucz3m!@#%*!#@!',
+    secret: 'DUMMY!',
     resave: false,
     saveUninitialized: false,
     store: store,
